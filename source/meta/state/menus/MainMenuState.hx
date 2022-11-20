@@ -49,7 +49,7 @@ class MainMenuState extends MusicBeatState
 		// make sure the music is playing
 		ForeverTools.resetMenuMusic();
 
-		#if DISCORD_RPC
+		#if desktop 
 		Discord.changePresence('MENU SCREEN', 'Main Menu');
 		#end
 
@@ -119,6 +119,10 @@ class MainMenuState extends MusicBeatState
 		versionShit.setFormat("VCR OSD Mono", 16, FlxColor.WHITE, LEFT, FlxTextBorderStyle.OUTLINE, FlxColor.BLACK);
 		add(versionShit);
 
+		#if android
+		addVirtualPad(LEFT_FULL, A_B);
+		#end
+		
 		var engineVersionShit:FlxText = new FlxText(5, FlxG.height - 18 - 16, 0, "VS Yung Lixo Rework v1.5", 12);
 		engineVersionShit.scrollFactor.set();
 		engineVersionShit.setFormat("VCR OSD Mono", 16, FlxColor.WHITE, LEFT, FlxTextBorderStyle.OUTLINE, FlxColor.BLACK);
