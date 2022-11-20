@@ -71,7 +71,7 @@ class Init extends FlxState
 			NOT_FORCED
 		],
 		'Controller Mode' => [
-			false,
+			true,
 			Checkmark,
 			'Whether to use a controller instead of the keyboard to play.',
 			NOT_FORCED
