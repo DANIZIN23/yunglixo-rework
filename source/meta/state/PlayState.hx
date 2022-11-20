@@ -525,6 +525,11 @@ class PlayState extends MusicBeatState
 		dialogueHUD.bgColor.alpha = 0;
 		FlxG.cameras.add(dialogueHUD);
 
+		#if android
+		addAndroidControls();
+		androidControls.visible = true;
+		#end
+
 		//
 		keysArray = [
 			copyKey(Init.gameControls.get('LEFT')[0]),
@@ -2908,11 +2913,11 @@ class PlayState extends MusicBeatState
 		blackStart.alpha = 0;
 	
 		var dialogPath = Paths.json(SONG.song.toLowerCase() + '/${Init.trueSettings.get('Language').toLowerCase()}' + '/dialogue' + dialogueModifier); // reshaped and gemafunkin !!1!!
-		if (sys.FileSystem.exists(dialogPath))
+		if (Assets.exists(dialogPath))
 		{
 			startedCountdown = false;
 
-			dialogueBox = DialogueBox.createDialogue(sys.io.File.getContent(dialogPath));
+			dialogueBox = DialogueBox.createDialogue(Assets.getText(dialogPath));
 			dialogueBox.cameras = [dialogueHUD];
 			dialogueBox.whenDaFinish = startCountdown;
 
