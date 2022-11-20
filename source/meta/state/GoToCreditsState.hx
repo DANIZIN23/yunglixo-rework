@@ -45,7 +45,7 @@ class GoToCreditsState extends MusicBeatState
   {
     super.create();
 
-    #if DISCORD_RPC
+                #if desktop 
 		Discord.changePresence('NOT THE CREDITS SCREEN', 'Freeplay Menu');
 		#end
 
@@ -58,6 +58,10 @@ class GoToCreditsState extends MusicBeatState
     warning.setGraphicSize(Std.int(warning.width * 1.5));
     warning.screenCenter();
     add(warning);
+
+	#if android
+        addVirtualPad(NONE, A_B);
+        #end
   }
 
   override function update(elapsed:Float)
