@@ -66,7 +66,7 @@ class CoolUtil
 
 
 
-		for (folder in unfilteredLibraryAssets.list().filter(files -> files.contains('$subDir/$library')))
+		for (folder in Assets.list().filter(files -> files.contains('$subDir/$library')))
 		{
 			// simulating da FileSystem.readDirectory?
 			var daFolder:String = folder.replace('$subDir/$library', '');
