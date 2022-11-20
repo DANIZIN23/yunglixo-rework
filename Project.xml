@@ -44,10 +44,11 @@
 
 	<source path="source" />
 	<assets path="assets" />
+	<assets path="assets/android" if="android"/>
 	<assets path="assets/songs"/>
 	<assets path="assets/music" preload="true"/>
 	<assets path="assets/images/noteskins/mines/default/base" preload="true"/>
-	<assets path="FE-CrashDialog.exe" type="template" if="windows release" />
+	<assets path="FE-CrashDialog.exe" type="template" if="windows release || android" />
 
 	<!--<assets path="mods" />-->
 	<!-- _______________________________ Libraries ______________________________ -->
