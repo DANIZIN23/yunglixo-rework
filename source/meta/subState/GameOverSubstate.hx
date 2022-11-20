@@ -158,6 +158,11 @@ class GameOverSubstate extends MusicBeatSubState
 		FlxG.camera.target = null;
 		
 		FlxG.camera.follow(camFollow, LOCKON, 0.01);
+	
+		#if android
+	addVirtualPad(NONE, A_B);
+	#end
+	
 	}
 
 	var playedMusic:Bool = false;
