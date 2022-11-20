@@ -135,7 +135,7 @@ class FreeplayState extends MusicBeatState
 		// LOAD MUSIC
 		// ForeverTools.resetMenuMusic();
 
-		#if DISCORD_RPC
+		#if desktop
 		Discord.changePresence('FREEPLAY MENU', 'Main Menu');
 		#end
 
@@ -209,6 +209,10 @@ class FreeplayState extends MusicBeatState
 		selector.size = 40;
 		selector.text = ">";
 		// add(selector);
+		
+		#if android
+		addVirtualPad(LEFT_FULL, A_B);
+		#end
 		
 		// oooh
 		for(i in 0...mechanicsString.length)
