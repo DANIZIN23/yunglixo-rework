@@ -64,16 +64,17 @@ class CoolUtil
 	{
 		var libraryArray:Array<String> = [];
 
-		#if sys
-		var unfilteredLibrary = FileSystem.readDirectory('$subDir/$library');
 
-		for (folder in unfilteredLibrary)
+
+		for (folder in unfilteredLibraryAssets.list().filter(files -> files.contains('$subDir/$library')))
 		{
-			if (!folder.contains('.'))
-				libraryArray.push(folder);
+			// simulating da FileSystem.readDirectory?
+			var daFolder:String = folder.replace('$subDir/$library', '');
+			daFolder = daFolder.replace(daFolder.substring(daFolder.indexOf('/'), daFolder.length), ''); // fancy
+			if (!daFolder.startsWith('.') && !libraryArray.contains(daFolder))
+				libraryArray.push(daFolder);
 		}
-		trace(libraryArray);
-		#end
+		
 
 		return libraryArray;
 	}
