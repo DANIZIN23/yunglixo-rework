@@ -57,7 +57,7 @@ class FlashingState extends MusicBeatState
 		#end
    
  
-     if(controls.ACCEPT || controls.BACK#if android || justTouched #end)
+     if(controls.ACCEPT || controls.BACK  #if android || justTouched #end)
       gotoGame();
 
     if(avisoAppear)
