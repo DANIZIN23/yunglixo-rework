@@ -2962,7 +2962,7 @@ class PlayState extends MusicBeatState
 				callTheFunny();
 			}
 		}
-		video.playVideo(Paths.video(name));
+		
 	}
 
 	function bfDodge()
