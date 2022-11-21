@@ -77,6 +77,10 @@ class FreeplayState extends MusicBeatState
 
 	override function create()
 	{
+		#if android
+		FlxG.android.preventDefaultKeys = [BACK];
+		#end	
+		
 		super.create();
 
 		mutex = new Mutex();
@@ -211,7 +215,7 @@ class FreeplayState extends MusicBeatState
 		// add(selector);
 		
 		#if android
-		addVirtualPad(LEFT_FULL, A_B);
+		addVirtualPad(LEFT_FULL, A_B_C);
 		#end
 		
 		// oooh
@@ -308,13 +312,13 @@ class FreeplayState extends MusicBeatState
 		if (controls.UI_RIGHT_P)
 			changeDiff(1);
 
-		if (controls.BACK)
+		if (controls.BACK || virtualPad.buttonB.justPressed)
 		{
 			threadActive = false;
 			Main.switchState(this, new MainMenuState());
 		}
 		
-		if (FlxG.keys.justPressed.SPACE && threadActive)
+		if (FlxG.keys.justPressed.SPACE || virtualPad.buttonC.justPressed && threadActive)
 		{
 			for(i in 0...mechanicsString.length)
 			{
