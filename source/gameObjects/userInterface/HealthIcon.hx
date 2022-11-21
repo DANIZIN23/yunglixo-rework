@@ -4,6 +4,7 @@ import flixel.FlxG;
 import flixel.FlxSprite;
 import flixel.graphics.FlxGraphic;
 import sys.FileSystem;
+import openfl.utils.Assets;
 
 using StringTools;
 
