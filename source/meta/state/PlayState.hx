@@ -12,6 +12,10 @@ import flixel.addons.transition.FlxTransitionableState;
 import flixel.group.FlxGroup.FlxTypedGroup;
 import flixel.input.keyboard.FlxKey;
 import flixel.text.FlxText;
+#if android
+import android.flixel.FlxVirtualPad;
+#end	
+	
 import flixel.math.FlxMath;
 import flixel.math.FlxPoint;
 import flixel.math.FlxRandom;
@@ -187,6 +191,9 @@ class PlayState extends MusicBeatState
 	var elapsedtime:Float = 0;
 
 	var modeStage:RelativeScaleMode;
+	
+	var _vpad:FlxVirtualPad;
+
 	
 	// yunglixo
 	// yunglixo
@@ -528,6 +535,9 @@ class PlayState extends MusicBeatState
 		#if android
 		addAndroidControls();
 		androidControls.visible = true;
+		_vpad = new FlxVirtualPad(NONE, A);
+		_vpad.cameras = [camHUD];
+		this.add(_vpad);
 		#end
 
 		//
@@ -808,7 +818,7 @@ class PlayState extends MusicBeatState
 
 		if(waitforcountdown) // warningStart
 		{
-			if(controls.DODGE)
+			if(controls.DODGE || _vpad.buttonA.justPressed)
 			{
 				FlxG.sound.play(Paths.sound('scrollMenu'));
 				waitforcountdown = false;
