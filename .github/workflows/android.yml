@@ -58,7 +58,7 @@ jobs:
           haxelib install flixel-addons
           
           haxelib git linc_luajit https://github.com/Sirox228/linc_luajit
-          haxelib git flixel https://github.com/YoshiCrafter29/flixel
+          haxelib git flixel https://github.com/13rice/flixel
           haxelib git flixel-addons https://github.com/ninjamuffin99/flixel-addons
           haxelib list
 
