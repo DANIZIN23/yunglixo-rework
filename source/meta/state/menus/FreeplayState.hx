@@ -300,7 +300,7 @@ class FreeplayState extends MusicBeatState
 		var upP = controls.UI_UP_P;
 		var downP = controls.UI_DOWN_P;
 		//var accepted = controls.ACCEPT;
-		var accepted = FlxG.keys.justPressed.ENTER;
+		var accepted = FlxG.keys.justPressed.ENTER || virtualPad.buttonA.justPressed;
 
 		if (upP)
 			changeSelection(-1);
