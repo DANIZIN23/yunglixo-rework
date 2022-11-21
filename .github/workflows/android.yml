@@ -49,7 +49,7 @@ jobs:
           haxelib install lime 7.9.0
           haxelib install hxCodec
           haxelib install openfl 9.1.0
-          haxelib --never install flixel
+          
           haxelib run lime setup flixel
           haxelib install flixel-tools
           haxelib install flixel-ui
