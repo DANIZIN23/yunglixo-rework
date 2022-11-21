@@ -837,6 +837,18 @@ class PlayState extends MusicBeatState
 			if (FlxG.keys.justPressed.SHIFT #if android || FlxG.android.justReleased.BACK #end)
 				dialogueBox.closeDialog();
 
+#if android
+                var justTouched:Bool = false;
+
+		for (touch in FlxG.touches.list)
+		{
+			if (touch.justPressed)
+			{
+				justTouched = true;
+			}
+		}
+		#end
+		
 			// the change I made was just so that it would only take accept inputs
 			if (controls.ACCEPT #if android || justTouched #end && dialogueBox.textStarted)
 			{
