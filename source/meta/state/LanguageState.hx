@@ -17,6 +17,10 @@ class LanguageState extends MusicBeatState
 
 	override function create()
 	{
+		#if android
+		FlxG.android.preventDefaultKeys = [BACK];
+		#end	
+		
 		super.create();
 		
 		for(i in 0...options.length)
@@ -36,7 +40,7 @@ class LanguageState extends MusicBeatState
 			add(daText);
 		
 			#if android
-		addVirtualPad(UP_DOWN, A);
+		addVirtualPad(NONE, A_B);
 		#end
 		
 		}
@@ -46,7 +50,7 @@ class LanguageState extends MusicBeatState
 	{
 		if(!selectedSomethin)
 		{
-			if(controls.ACCEPT)
+			if(controls.ACCEPT || virtualPad.buttonA.justPressed)
 				gotoGame();
 			
 			if(controls.UI_UP_P || controls.UI_DOWN_P)
