@@ -192,7 +192,11 @@ class CreditsState extends MusicBeatState
 		socialmedia.updateHitbox();
 		add(socialmedia);
 
-		changeSelection();
+		#if android
+		addVirtualPad(UP_DOWN, A_B);
+		#end	
+		
+			changeSelection();
 	}
 
 	override function update(elapsed:Float)
