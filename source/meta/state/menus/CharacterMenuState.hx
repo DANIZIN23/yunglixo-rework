@@ -163,6 +163,10 @@ class CharacterMenuState extends MusicBeatState
 		minerPos = FlxG.save.data.arrowPositions[1];
 		FlxG.save.flush();
 		
+		#if android 
+		addVirtualPad(LEFT_RIGHT, A_B);
+		#end	
+		
 		updateSelection();
 	}
 
