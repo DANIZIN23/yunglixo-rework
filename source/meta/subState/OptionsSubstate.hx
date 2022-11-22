@@ -96,9 +96,7 @@ class OptionsSubstate extends MusicBeatSubState
 		submenuGroup.visible = false;
 		submenuoffsetGroup.visible = false;
 	
-	  #if android
-		addVirtualPad(LEFT_FULL, A_B);
-		#end
+	  
 	}
 
 	private var keyOptions:FlxTypedGroup<Alphabet>;
