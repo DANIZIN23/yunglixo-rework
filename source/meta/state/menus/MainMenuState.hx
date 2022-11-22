@@ -120,7 +120,7 @@ class MainMenuState extends MusicBeatState
 		add(versionShit);
 
 		#if android
-		addVirtualPad(LEFT_FULL, A_B);
+		addVirtualPad(UP_DOWN, A_B);
 		#end
 		
 		var engineVersionShit:FlxText = new FlxText(5, FlxG.height - 18 - 16, 0, "VS Yung Lixo Rework v1.5", 12);
